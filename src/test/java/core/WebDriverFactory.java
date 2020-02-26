@@ -5,7 +5,6 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverFactory {
     public static WebDriver driver = null;
-    public static String browserName = "chrome";
     static String projectPath = System.getProperty("user.dir");
 
     public static void initialize(){
