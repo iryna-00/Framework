@@ -7,9 +7,9 @@ public class WebDriverFactory {
     private static WebDriver driver = null;
     private static String projectPath = System.getProperty("user.dir");
 
-    public static void initialize(){
-        if (driver == null){
-            System.setProperty("webdriver.chrome.driver", projectPath +"/src/test/java/drivers/chromedriver.exe");
+    private static void initialize() {
+        if (driver == null) {
+            System.setProperty("webdriver.chrome.driver", projectPath + "/src/test/java/drivers/chromedriver.exe");
             driver = new ChromeDriver();
         }
     }
