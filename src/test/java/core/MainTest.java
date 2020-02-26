@@ -1,6 +1,5 @@
 package core;
 
-import org.openqa.selenium.WebDriver;
 import org.testng.annotations.Test;
 
 import static core.WebDriverFactory.initialize;
