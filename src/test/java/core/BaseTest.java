@@ -1,6 +1,7 @@
 package core;
 
 import org.openqa.selenium.WebDriver;
+import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
@@ -10,16 +11,14 @@ public class BaseTest {
     WebDriver driver;
 
     @BeforeMethod
-    public void beforeMethod() {
-        driver = initialize("chrome");
-        driver.get("https://google.com");
-        driver = initialize("firefox");
+    public void beforeMethod(ITestContext iTestContext) {
+        String browserName =  iTestContext.getCurrentXmlTest().getParameter("browserName");
+        driver = initialize(browserName);
         driver.get("https://google.com");
     }
 
     @AfterMethod
     public void afterMethod() {
-        driver.close();
         driver.quit();
         driver = null;
     }

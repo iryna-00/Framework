@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <suite name="Suite" verbose="1" >
     <test name="Test" >
         <classes>
+            <parameter name="browserName" value="FireFox"/>
             <class name="core.MainTest">
                 <methods>
                     <include name = "driverTest"/>

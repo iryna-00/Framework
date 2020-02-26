@@ -8,13 +8,13 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 public class WebDriverFactory {
     private static WebDriver driver = null;
 
-    public static WebDriver initialize(String browser) {
+    public static WebDriver initialize(String browserName) {
         if (driver == null) {
-            if (browser.equalsIgnoreCase("chrome")) {
+            if ("chrome".equalsIgnoreCase(browserName)) {
                 WebDriverManager.chromedriver().setup();
                 driver = new ChromeDriver();
             }
-            else if (browser.equalsIgnoreCase("firefox")){
+            else if ("firefox".equalsIgnoreCase(browserName)){
                 WebDriverManager.firefoxdriver().setup();
                 driver = new FirefoxDriver();
             }
