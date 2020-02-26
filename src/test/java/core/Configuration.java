@@ -8,7 +8,7 @@ public class Configuration {
         return URL;
     }
 
-    public String getBROWSER(){
+    public static String getBROWSER(){
         return BROWSER;
     }
 }

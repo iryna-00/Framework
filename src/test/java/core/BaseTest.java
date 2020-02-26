@@ -5,16 +5,17 @@ import org.testng.ITestContext;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 
+import java.util.Optional;
+
 import static core.WebDriverFactory.initialize;
 
-public class BaseTest {
+public class BaseTest extends Configuration {
     WebDriver driver;
 
     @BeforeMethod
     public void beforeMethod(ITestContext iTestContext) {
-        String browserName =  iTestContext.getCurrentXmlTest().getParameter("browserName");
+        String browserName =  Optional.ofNullable(Configuration.getBROWSER()).orElse(iTestContext.getCurrentXmlTest().getParameter("browserName"));
         driver = initialize(browserName);
-        driver.get("https://google.com");
     }
 
     @AfterMethod
