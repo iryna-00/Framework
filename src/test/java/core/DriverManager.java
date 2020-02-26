@@ -6,4 +6,8 @@ public class DriverManager {
 
     }
 
+    public void closeDriver() {
+
+    }
+
 }
