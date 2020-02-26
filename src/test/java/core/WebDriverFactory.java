@@ -12,14 +12,13 @@ public class WebDriverFactory {
             System.setProperty("webdriver.chrome.driver", projectPath +"/src/test/java/drivers/chromedriver.exe");
             driver = new ChromeDriver();
         }
-
-        driver.get("https://google.com");
-        driver.close();
-        driver.quit();
-        driver = null;
     }
 
     public static void main(String[] args) {
         initialize();
+        driver.get("https://google.com");
+        driver.close();
+        driver.quit();
+        driver = null;
     }
 }
