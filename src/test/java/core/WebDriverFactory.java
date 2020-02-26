@@ -4,8 +4,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 public class WebDriverFactory {
-    public static WebDriver driver = null;
-    static String projectPath = System.getProperty("user.dir");
+    private static WebDriver driver = null;
+    private static String projectPath = System.getProperty("user.dir");
 
     public static void initialize(){
         if (driver == null){
