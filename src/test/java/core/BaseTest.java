@@ -11,7 +11,9 @@ public class BaseTest {
 
     @BeforeMethod
     public void beforeMethod() {
-        driver = initialize();
+        driver = initialize("chrome");
+        driver.get("https://google.com");
+        driver = initialize("firefox");
         driver.get("https://google.com");
     }
 
