@@ -4,7 +4,7 @@ public class Configuration {
     private static String URL = System.getenv("URL");
     private static String BROWSER = System.getenv("BROWSER");
 
-    public String getURL(){
+    public static String getURL(){
         return URL;
     }
 
