@@ -1,13 +1,15 @@
 package core;
 
+import org.openqa.selenium.WebDriver;
+
 public class DriverManager {
-
-    public void getDrivers() {
-
+    private static ThreadLocal<WebDriver> driverPool = new ThreadLocal<>();
+    public static void setDriver(WebDriver driver) {
+        driverPool.set(driver);
     }
 
-    public void closeDriver() {
-
+    public static  WebDriver getDriver() {
+        return driverPool.get();
     }
 
 }
