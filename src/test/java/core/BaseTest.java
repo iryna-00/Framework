@@ -9,18 +9,20 @@ import java.util.Optional;
 
 import static core.WebDriverFactory.initialize;
 
-public class BaseTest extends Configuration {
-    WebDriver driver;
+public class BaseTest extends DriverManager {
+    //WebDriver;
+
 
     @BeforeMethod
     public void beforeMethod(ITestContext iTestContext) {
         String browserName =  Optional.ofNullable(Configuration.getBROWSER()).orElse(iTestContext.getCurrentXmlTest().getParameter("browserName"));
-        driver = initialize(browserName);
+        DriverManager.getDriver();
+        DriverManager.setDriver(initialize(browserName));
     }
 
     @AfterMethod
     public void afterMethod() {
-        driver.quit();
-        driver = null;
+        DriverManager.getDriver().quit();
+
     }
 }
