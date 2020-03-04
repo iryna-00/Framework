@@ -4,7 +4,7 @@
     <test name="Test" >
         <classes>
             <parameter name="browserName" value="FireFox"/>
-            <class name="core.MainTest">
+            <class name="example.TestSuit">
                 <methods>
                     <include name = "driverTest"/>
                 </methods>

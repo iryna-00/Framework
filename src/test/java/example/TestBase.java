@@ -2,14 +2,16 @@ package example;
 
 import consts.Constants;
 import driver.WebDriverFactory;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
 import pageObject.HomePage;
-
-import java.util.concurrent.TimeUnit;
 
 
 public class TestBase {
@@ -22,8 +24,9 @@ public class TestBase {
 	public void setup(String browserName) {
 		WebDriverFactory.initDriver(browserName);
 		webDriver = WebDriverFactory.getDriver();
-		webDriver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		navigateTo(Constants.Application.BASE_URL);
+		WebDriverWait wait = new WebDriverWait(webDriver, 20);
+		WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("cta-button__text")));
 		homePage = PageFactory.initElements(webDriver, HomePage.class);
 	}
 
