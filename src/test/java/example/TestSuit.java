@@ -17,7 +17,7 @@ public class TestSuit extends TestBase {
 
         Actions builder = new Actions(webDriver);
         builder.contextClick(contactUsPage.selector()).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.ARROW_DOWN).sendKeys(Keys.RETURN).build().perform();
-        Assert.assertTrue(Boolean.parseBoolean(contactUsPage.firstName().getAttribute("required")));
+        Assert.assertTrue(Boolean.parseBoolean(contactUsPage.firstName().getAttribute("aria-required")));
         contactUsPage.firstName().sendKeys("Iryna");
         contactUsPage.lastName().sendKeys("Baranov");
         contactUsPage.email().sendKeys("test@mail.com");
