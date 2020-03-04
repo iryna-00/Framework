@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="All Test Suite">
+    <test verbose="2" preserve-order="true"
+          name="C:/Users/Iryna_Baranov/IdeaProjects/Mentoring/Framework/src/test/java/example/TestSuit.java">
+        <parameter name="browserName" value="chrome"/>
+        <parameter name="firstName" value="Iryna"/>
+        <parameter name="lastName" value="Baranov"/>
+        <parameter name="email" value="test@mail.com"/>
+        <parameter name="phone" value="123323423"/>
+        <classes>
+            <class name="example.TestSuit">
+                <methods>
+                    <include name="textCaseExample"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>
