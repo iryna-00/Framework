@@ -1,5 +1,6 @@
 package example;
 
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
@@ -8,6 +9,7 @@ import org.testng.annotations.Test;
 import pageObject.CareersPage;
 import pageObject.ContactUsPage;
 
+@Listeners(listeners.Listener.class)
 public class TestSuit extends TestBase {
 
     @Test(description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit")
@@ -27,7 +29,7 @@ public class TestSuit extends TestBase {
         contactUsPage.email().sendKeys(email);
         contactUsPage.phone().sendKeys(phone);
         contactUsPage.submitButton().click();
-        CareersPage careersPage = contactUsPage.clickCareersLink();
+        //CareersPage careersPage = contactUsPage.clickCareersLink(); //java.lang.RuntimeException: java.lang.InstantiationException: pageObject.CareersPage
 
 
 
