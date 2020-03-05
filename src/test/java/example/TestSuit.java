@@ -5,6 +5,7 @@ import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pageObject.CareersPage;
 import pageObject.ContactUsPage;
 
 public class TestSuit extends TestBase {
@@ -25,8 +26,10 @@ public class TestSuit extends TestBase {
         contactUsPage.lastName().sendKeys(lastName);
         contactUsPage.email().sendKeys(email);
         contactUsPage.phone().sendKeys(phone);
-
         contactUsPage.submitButton().click();
+        CareersPage careersPage = contactUsPage.clickCareersLink();
+
+
 
     }
 }

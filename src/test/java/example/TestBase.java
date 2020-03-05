@@ -11,6 +11,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Parameters;
+import pageObject.CareersPage;
+import pageObject.ContactUsPage;
 import pageObject.HomePage;
 
 
@@ -18,6 +20,8 @@ public class TestBase {
 
 	protected WebDriver webDriver;
 	protected HomePage homePage;
+	protected ContactUsPage contactUsPage;
+	protected CareersPage careersPage;
 
 	@Parameters({"browserName"})
 	@BeforeMethod(alwaysRun = true)
@@ -28,6 +32,7 @@ public class TestBase {
 		WebDriverWait wait = new WebDriverWait(webDriver, 20);
 		WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("cta-button__text")));
 		homePage = PageFactory.initElements(webDriver, HomePage.class);
+//		careersPage = PageFactory.initElements(webDriver, CareersPage.class);
 	}
 
 	protected  void navigateTo(String URL){

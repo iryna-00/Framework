@@ -3,15 +3,23 @@ package pageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 
 public class ContactUsPage extends Page {
+
+    @FindBy(how= How.XPATH, using = "//a[@class='top-navigation__item-link'][contains(text(),'Careers')]" )
+    private WebElement careersLink;
     private String pageTitle;
+
     private WebElement selector;
     private WebElement firstName;
     private WebElement lastName;
     private WebElement email;
     private WebElement phone;
     private WebElement submitButton;
+
 
     public ContactUsPage(WebDriver webDriver) {
         super(webDriver);
@@ -45,5 +53,8 @@ public class ContactUsPage extends Page {
         return webDriver.findElement(By.className("button-ui"));
     }
 
-
+    public CareersPage clickCareersLink() {
+        careersLink.click();
+        return PageFactory.initElements(webDriver, CareersPage.class);
+    }
 }
