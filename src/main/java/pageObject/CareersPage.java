@@ -1,6 +1,8 @@
 package pageObject;
 
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
 
 public class CareersPage extends Page {
 
@@ -8,5 +10,6 @@ public class CareersPage extends Page {
         super(webDriver);
     }
 
-
+    @FindBy(id = "wrapper")
+    WebElement someElement;
 }

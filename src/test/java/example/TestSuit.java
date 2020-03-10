@@ -24,12 +24,12 @@ public class TestSuit extends TestBase {
         Assert.assertTrue(Boolean.parseBoolean(contactUsPage.lastName().getAttribute("aria-required")));
         Assert.assertTrue(Boolean.parseBoolean(contactUsPage.email().getAttribute("aria-required")));
         Assert.assertTrue(Boolean.parseBoolean(contactUsPage.phone().getAttribute("aria-required")));
-        contactUsPage.firstName().sendKeys(firstName);
-        contactUsPage.lastName().sendKeys(lastName);
-        contactUsPage.email().sendKeys(email);
-        contactUsPage.phone().sendKeys(phone);
-        contactUsPage.submitButton().click();
-        //CareersPage careersPage = contactUsPage.clickCareersLink(); //java.lang.RuntimeException: java.lang.InstantiationException: pageObject.CareersPage
+//        contactUsPage.firstName().sendKeys(firstName);
+//        contactUsPage.lastName().sendKeys(lastName);
+//        contactUsPage.email().sendKeys(email);
+//        contactUsPage.phone().sendKeys(phone);
+//        contactUsPage.submitButton().click();
+        contactUsPage.clickCareersLink(); //java.lang.RuntimeException: java.lang.InstantiationException: pageObject.CareersPage
 
 
 
