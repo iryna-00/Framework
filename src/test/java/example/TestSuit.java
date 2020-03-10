@@ -1,12 +1,11 @@
 package example;
 
-import org.testng.annotations.Listeners;
-import org.testng.annotations.Parameters;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.interactions.Actions;
 import org.testng.Assert;
+import org.testng.annotations.Listeners;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
-import pageObject.CareersPage;
 import pageObject.ContactUsPage;
 
 @Listeners(listeners.Listener.class)
@@ -24,14 +23,11 @@ public class TestSuit extends TestBase {
         Assert.assertTrue(Boolean.parseBoolean(contactUsPage.lastName().getAttribute("aria-required")));
         Assert.assertTrue(Boolean.parseBoolean(contactUsPage.email().getAttribute("aria-required")));
         Assert.assertTrue(Boolean.parseBoolean(contactUsPage.phone().getAttribute("aria-required")));
-//        contactUsPage.firstName().sendKeys(firstName);
-//        contactUsPage.lastName().sendKeys(lastName);
-//        contactUsPage.email().sendKeys(email);
-//        contactUsPage.phone().sendKeys(phone);
-//        contactUsPage.submitButton().click();
+        contactUsPage.firstName().sendKeys(firstName);
+        contactUsPage.lastName().sendKeys(lastName);
+        contactUsPage.email().sendKeys(email);
+        contactUsPage.phone().sendKeys(phone);
+        contactUsPage.submitButton().click();
         contactUsPage.clickCareersLink(); //java.lang.RuntimeException: java.lang.InstantiationException: pageObject.CareersPage
-
-
-
     }
 }
