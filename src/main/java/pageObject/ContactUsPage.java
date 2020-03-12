@@ -1,60 +1,42 @@
 package pageObject;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
-import org.openqa.selenium.support.PageFactory;
 
 public class ContactUsPage extends Page {
-
-    @FindBy(how= How.XPATH, using = "//a[@class='top-navigation__item-link'][contains(text(),'Careers')]" )
-    private WebElement careersLink;
-    private String pageTitle;
-
-    private WebElement selector;
-    private WebElement firstName;
-    private WebElement lastName;
-    private WebElement email;
-    private WebElement phone;
-    private WebElement submitButton;
-
-
     public ContactUsPage(WebDriver webDriver) {
         super(webDriver);
     }
 
-    public String pageTitle(){
-        return webDriver.getTitle();
+    @FindBy(how = How.ID, using = "_content_epam_en_about_who-we-are_contact_jcr_content_content-container_section_section-par_form_constructor_user_first_name")
+    private WebElement firstNameField;
+    public void EnterFirstName(String firstName) {
+        firstNameField.sendKeys(firstName);
     }
 
-    public  WebElement selector(){
-        return webDriver.findElement(By.className("select2-selection__rendered"));
+    @FindBy(how = How.ID, using = "_content_epam_en_about_who-we-are_contact_jcr_content_content-container_section_section-par_form_constructor_user_last_name")
+    private WebElement lastNameField;
+    public void EnterLastName(String lastName) {
+        lastNameField.sendKeys(lastName);
     }
 
-    public  WebElement firstName(){
-        return webDriver.findElement(By.id("_content_epam_en_about_who-we-are_contact_jcr_content_content-container_section_section-par_form_constructor_user_first_name"));
+    @FindBy(how = How.ID, using = "_content_epam_en_about_who-we-are_contact_jcr_content_content-container_section_section-par_form_constructor_user_email")
+    private WebElement emailField;
+    public void EnterEmail(String email) {
+        emailField.sendKeys(email);
     }
 
-    public  WebElement lastName(){
-        return webDriver.findElement(By.id("_content_epam_en_about_who-we-are_contact_jcr_content_content-container_section_section-par_form_constructor_user_last_name"));
+    @FindBy(how = How.ID, using = "_content_epam_en_about_who-we-are_contact_jcr_content_content-container_section_section-par_form_constructor_user_phone")
+    private WebElement phoneField;
+    public void EnterPhone(String phone) {
+        phoneField.sendKeys(phone);
     }
 
-    public  WebElement email(){
-        return webDriver.findElement(By.id("_content_epam_en_about_who-we-are_contact_jcr_content_content-container_section_section-par_form_constructor_user_email"));
-    }
-
-    public  WebElement phone(){
-        return webDriver.findElement(By.id("_content_epam_en_about_who-we-are_contact_jcr_content_content-container_section_section-par_form_constructor_user_phone"));
-    }
-
-    public  WebElement submitButton(){
-        return webDriver.findElement(By.className("button-ui"));
-    }
-
-    public CareersPage clickCareersLink() {
-        careersLink.click();
-        return PageFactory.initElements(webDriver, CareersPage.class);
+    @FindBy(how = How.CLASS_NAME, using = "button-ui")
+    private WebElement submitButton;
+    public void ClickSubmitButton() {
+        submitButton.click();
     }
 }
