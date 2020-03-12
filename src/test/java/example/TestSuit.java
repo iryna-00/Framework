@@ -1,9 +1,6 @@
 package example;
 
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.Keys;
-import org.openqa.selenium.interactions.Actions;
-import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
@@ -23,6 +20,6 @@ public class TestSuit extends TestBase {
         contactUsPage.EnterEmail(email);
         contactUsPage.EnterPhone(phone);
         contactUsPage.ClickSubmitButton();
-        //contactUsPage.clickCareersLink(); //java.lang.RuntimeException: java.lang.InstantiationException: pageObject.CareersPage
+        contactUsPage.clickCareersLink(); //java.lang.RuntimeException: java.lang.InstantiationException: pageObject.CareersPage
     }
 }
