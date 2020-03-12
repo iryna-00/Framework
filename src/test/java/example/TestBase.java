@@ -32,7 +32,6 @@ public class TestBase {
 		WebDriverWait wait = new WebDriverWait(webDriver, 20);
 		WebElement button = wait.until(ExpectedConditions.visibilityOfElementLocated(By.className("cta-button__text")));
 		homePage = PageFactory.initElements(webDriver, HomePage.class);
-//		careersPage = PageFactory.initElements(webDriver, CareersPage.class);
 	}
 
 	protected  void navigateTo(String URL){
