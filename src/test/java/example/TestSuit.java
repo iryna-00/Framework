@@ -15,7 +15,6 @@ public class TestSuit extends TestBase {
     public void textCaseExample(String firstName, String lastName, String email, String phone) {
         HomePage homePage = PageFactory.initElements(webDriver, HomePage.class);
         ContactUsPage contactUsPage = homePage.clickContactUsButton();
-        //contactUsPage.SelectCase("Talk to Sales in Northern Europe"); // problem with locator
         contactUsPage.EnterFirstName(firstName);
         contactUsPage.EnterLastName(lastName);
         contactUsPage.EnterEmail(email);
