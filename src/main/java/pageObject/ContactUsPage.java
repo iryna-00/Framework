@@ -4,6 +4,9 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
+
+import java.util.concurrent.TimeUnit;
 
 public class ContactUsPage extends Page {
     public ContactUsPage(WebDriver webDriver) {
@@ -38,5 +41,13 @@ public class ContactUsPage extends Page {
     private WebElement submitButton;
     public void ClickSubmitButton() {
         submitButton.click();
+    }
+
+    @FindBy(how = How.XPATH, using = "//a[@class='top-navigation__item-link'][contains(text(),'Careers')]")
+    private WebElement careersLink;
+    public CareersPage clickCareersLink(){
+        careersLink.click();
+        webDriver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        return PageFactory.initElements(webDriver, CareersPage.class);
     }
 }
